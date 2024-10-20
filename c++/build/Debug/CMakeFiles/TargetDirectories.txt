@@ -1,0 +1,3 @@
+/Users/a/works/study/c++/build/Debug/CMakeFiles/MyApp.dir
+/Users/a/works/study/c++/build/Debug/CMakeFiles/edit_cache.dir
+/Users/a/works/study/c++/build/Debug/CMakeFiles/rebuild_cache.dir
