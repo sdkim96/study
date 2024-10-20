@@ -3,7 +3,7 @@
 
 int main() {
 
-    Rectangle r(1,2,3,4),s(5,6,3,4);
+    Rectangle r(1,2,3,4, "red"),s(5,6,3,4, "blue");
     Rectangle *p = &s;
 
     if (r.GetHeight() * r.GetWidth() > p->GetHeight() * p->GetWidth()) {
