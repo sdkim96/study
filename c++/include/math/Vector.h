@@ -15,8 +15,8 @@ class Vector {
 
         Vector& getValues();
         Vector& setValues(int size, float* vectorValue);
-        float getNorm();
         
+        float getNorm();
         float dotProduct(const Vector& otherVector);
         float cosineSimilarity(Vector& otherVector);
 
