@@ -1,4 +1,5 @@
 #include "Vector.h"
+#include <cassert>
 
 #include <iostream>
 
@@ -126,10 +127,7 @@ Vector& Vector::setValues(int size, float* vectorValue) {
     */
     std::cout << "Vector.cpp: setValues called" << std::endl;
 
-    if (vectorValue == nullptr) {
-        std::cerr << "Error: Null pointer passed to setValues." << std::endl;
-        return *this;
-    }
+    assert(vectorValue != nullptr);
     
     this->size = size;
     for(int i=0; i<size; i++) {
@@ -177,10 +175,7 @@ float Vector::dotProduct(const Vector& otherVector) {
     std::cout << "Vector.cpp: dotProduct called" << std::endl;
     
     // 1. 차원 다르면 에러
-    if (this->size != otherVector.size) {
-        std::cerr << "Error: Vector size mismatch." << std::endl;
-        return 0.0f;
-    }
+    assert (this->size == otherVector.size);
 
     // 2. dot product 계산
     float scalar = 0.0f;
@@ -193,30 +188,6 @@ float Vector::dotProduct(const Vector& otherVector) {
     
 }
 
-Vector Vector::crossProduct(const Vector& otherVector) {
-    /*
-        constexpr int v1Size = 6;
-        float v1Value[v1Size] = {5.0, 4.0, 3.0, 2.0, 1.0, 0.0};
-
-        constexpr int v2Size = 6;
-        float v2Value[v2Size] = {-5.0, -4.0, -3.0, -2.0, 1.0, 9.0};
-
-        Vector v1 = Vector(v1Size, v1Value);
-        Vector v2 = Vector(v2Size, v2Value);
-
-        Vector v3 = v1.crossProduct(v2);
-    */
-
-    assert (this->size == 3 && otherVector.size == 3);
-
-    std::cout << "Vector.cpp: crossProduct called" << std::endl;
-
-
-
-
-
-    
-}
 
 float Vector::cosineSimilarity(Vector& otherVector) {
 
@@ -244,5 +215,5 @@ int main() {
     float scalar = v1.dotProduct(v2);
 
     float cosineSimilarity = v1.cosineSimilarity(v2);
-    
+
 }

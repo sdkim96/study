@@ -29,8 +29,6 @@ class Vector {
         float getNorm();
         
         float dotProduct(const Vector& otherVector);
-        Vector crossProduct(const Vector& otherVector);
-
         float cosineSimilarity(Vector& otherVector);
 
     private:
