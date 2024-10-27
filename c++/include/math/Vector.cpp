@@ -130,7 +130,7 @@ Vector& Vector::setValues(int size, float* vectorValue) {
     assert(vectorValue != nullptr);
     
     this->size = size;
-    for(int i=0; i<size; i++) {
+    for(int i=0; i<this->size; i++) {
         this->vectorValue[i] = vectorValue[i];
     }
 
@@ -203,10 +203,10 @@ float Vector::cosineSimilarity(Vector& otherVector) {
 
 
 int main() {
-    constexpr int v1Size = 6;
+    const int v1Size = 6;
     float v1Value[v1Size] = {5.0, 4.0, 3.0, 2.0, 1.0, 0.0};
 
-    constexpr int v2Size = 6;
+    const int v2Size = 6;
     float v2Value[v2Size] = {-5.0, -4.0, -3.0, -2.0, 1.0, 9.0};
 
     Vector v1 = Vector(v1Size, v1Value);
@@ -216,4 +216,6 @@ int main() {
 
     float cosineSimilarity = v1.cosineSimilarity(v2);
 
+    std::cout << "Dot product: " << scalar << std::endl;
+    std::cout << "Cosine similarity: " << cosineSimilarity << std::endl;
 }
