@@ -87,51 +87,46 @@ CompareResult Polynomial::isCapacityBiggerThan (const Polynomial &otherPoly) {
     }
 }
 
-
-/*
-
-    예를 들어서
-    3x^8 + 2x^5 + 1x^3 + 5x^1 + 9x^0 를 객체로 표현하면
-    [Term(3.0, 8), Term(2.0, 5), Term(1.0, 3), Term(5.0, 1), Term(9.0, 0)]
-    이런 식인데
-
-
-
-
-*/
-
 Polynomial Polynomial::add(const Polynomial &otherPoly) {
     std::cout << "Polynomial.cpp: add called" << std::endl;
 
-    int newCapacity;
-    CompareResult result = this->isCapacityBiggerThan(otherPoly);
+    int newCapacity = this->capacity + otherPoly.capacity;
+    Polynomial newPoly(newCapacity);
 
-    switch (result) {
-        case CompareResult::isBigger:
-            newCapacity = this->capacity;
-            break;
-        case CompareResult::isSmaller:
-            newCapacity = otherPoly.capacity;
-            break;
-        case CompareResult::isEqual:
-            newCapacity = this->capacity;
-            break;
-    }
+    int i = 0, j = 0, k = 0;
 
-    Polynomial newPoly = Polynomial(newCapacity);
-
-    for (int i=0; i<newCapacity; i++) {
-         
-        //TODO: 이 부분을 다시 생각해보자 정확하지 않음
-        if (this->termArray[i].exp == otherPoly.termArray[i].exp) {
-            newPoly.setTerm(this->termArray[i].coef + otherPoly.termArray[i].coef, this->termArray[i].exp);
-        } else {
+    while (i < this->capacity && j < otherPoly.capacity) {
+        if (this->termArray[i].exp == otherPoly.termArray[j].exp) {
+            // 동일한 지수인 경우, 계수를 더함
+            float sumCoef = this->termArray[i].coef + otherPoly.termArray[j].coef;
+            if (sumCoef != 0.0f) {
+                newPoly.setTerm(sumCoef, this->termArray[i].exp);
+            }
+            i++;
+            j++;
+        } else if (this->termArray[i].exp > otherPoly.termArray[j].exp) {
+            // this의 항이 더 높은 지수를 가지는 경우
             newPoly.setTerm(this->termArray[i].coef, this->termArray[i].exp);
-            newPoly.setTerm(otherPoly.termArray[i].coef, otherPoly.termArray[i].exp);
+            i++;
+        } else {
+            // otherPoly의 항이 더 높은 지수를 가지는 경우
+            newPoly.setTerm(otherPoly.termArray[j].coef, otherPoly.termArray[j].exp);
+            j++;
         }
     }
 
-    return *this;
+    // 남은 항 처리
+    while (i < this->capacity) {
+        newPoly.setTerm(this->termArray[i].coef, this->termArray[i].exp);
+        i++;
+    }
+
+    while (j < otherPoly.capacity) {
+        newPoly.setTerm(otherPoly.termArray[j].coef, otherPoly.termArray[j].exp);
+        j++;
+    }
+
+    return newPoly;
 }
 
 Polynomial Polynomial::subtract(const Polynomial &otherPoly) {
