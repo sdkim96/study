@@ -67,6 +67,15 @@
     "optional": "cpp",
     "ratio": "cpp",
     "tuple": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "stdio.h": "c",
+    "atomic": "c",
+    "cstdlib": "c",
+    "locale": "c",
+    "ostream": "c",
+    "typeinfo": "c",
+    "algorithm": "c",
+    "cmath": "c",
+    "complex": "c"
   }
 }
