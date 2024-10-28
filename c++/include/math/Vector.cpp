@@ -210,12 +210,14 @@ int main() {
     float v2Value[v2Size] = {-5.0, -4.0, -3.0, -2.0, 1.0, 9.0};
 
     Vector v1 = Vector(v1Size, v1Value);
-    Vector v2 = Vector(v2Size, v2Value);
+    Vector *v2 = new Vector(v2Size, v2Value);
 
-    float scalar = v1.dotProduct(v2);
+    float scalar = v1.dotProduct(*v2);
 
-    float cosineSimilarity = v1.cosineSimilarity(v2);
+    float cosineSimilarity = v1.cosineSimilarity(*v2);
 
     std::cout << "Dot product: " << scalar << std::endl;
     std::cout << "Cosine similarity: " << cosineSimilarity << std::endl;
+
+    delete v2;
 }
