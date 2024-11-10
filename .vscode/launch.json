@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/a/works/study/c++/include/math",
-      "program": "/Users/a/works/study/c++/include/math/build/Debug/outDebug"
+      "cwd": "/Users/a/works/study/c++/src/silver",
+      "program": "/Users/a/works/study/c++/src/silver/build/Debug/outDebug"
     }
   ]
 }

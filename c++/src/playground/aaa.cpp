@@ -6,14 +6,15 @@
 using namespace std;
 
 int getOrDefault(unordered_map<string, int>& m, const string &key, int defaultValue) {
+
     auto it = m.find(key);
     return it != m.end()? it->second : defaultValue;
 };
 
 int main() {
 
-    set<int> s;
     vector<int> v;
+    set<int> s;
 
     set<string> s2;
 

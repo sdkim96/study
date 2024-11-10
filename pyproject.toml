@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "study"
+version = "0.1.0"
+description = ""
+authors = ["sdkim96 <seong960603@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+gpt-researcher = "^0.10.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
