@@ -41,3 +41,22 @@ def solve_two_pt(array: list[int], target: int):
 int1, int2 = solve_two_pt([7,0,6,4], 6)
 
 print(int1, int2)
+
+#근데 아래처럼 하면 됨
+nums = [3,2,4]
+target = 6
+
+mapping=[(i,n) for i, n in enumerate(nums)]
+sortted = sorted(mapping, key=lambda x:x[1])
+
+left = 0
+right = len(sortted) -1
+
+while left < right:
+    if sortted[left][1] + sortted[right][1] == target:
+        print(sortted[left][0], sortted[right][0])
+        break
+    elif sortted[left][1] + sortted[right][1] < target:
+        left += 1
+    else:
+        right -= 1
