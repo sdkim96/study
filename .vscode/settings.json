@@ -111,6 +111,8 @@
     "sstream": "cpp",
     "stdexcept": "cpp",
     "streambuf": "cpp",
-    "variant": "cpp"
+    "variant": "cpp",
+    "limits.h": "c",
+    "float.h": "c"
   }
 }
