@@ -3,6 +3,7 @@
 ### Undefined or Unspecific
 
 **You must not evaluate value at once in one line**
+
 Let `int a=3;`.
 
 ```c

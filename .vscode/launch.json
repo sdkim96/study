@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/a/works/study/c/func",
-      "program": "/Users/a/works/study/c/func/build/Debug/outDebug"
+      "cwd": "/Users/a/works/study/c/array",
+      "program": "/Users/a/works/study/c/array/build/Debug/outDebug"
     }
   ]
 }
