@@ -8,14 +8,11 @@
             "args": [
                 "-g",
                 "${workspaceFolder}/c++/src/rectangle1.cpp",
-                "${workspaceFolder}/c++/include/rectangle/Rectangle.cpp",  // src 폴더에서 rectangle.cpp 추가
+                "${workspaceFolder}/c++/include/rectangle/Rectangle.cpp",
                 "-o",
                 "${workspaceFolder}/c++/build/rectangle1.exe"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true   // 이 작업을 기본 작업으로 설정
-            },
+            "group": "build",
             "problemMatcher": [
                 "$gcc"
             ],
@@ -40,7 +37,32 @@
             ],
             "group": {
                 "kind": "build",
-                "isDefault": false  // 기본 작업이 아님
+                "isDefault": false
+            },
+            "detail": "디버거에서 생성된 작업입니다."
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: clang 활성 파일 빌드",
+            "command": "/usr/bin/clang",
+            "args": [
+                "-fcolor-diagnostics",
+                "-fansi-escape-codes",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                ""
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
             },
             "detail": "디버거에서 생성된 작업입니다."
         }

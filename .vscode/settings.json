@@ -113,7 +113,9 @@
     "streambuf": "cpp",
     "variant": "cpp",
     "limits.h": "c",
-    "float.h": "c"
+    "float.h": "c",
+    "minions.h": "c",
+    "account.h": "c"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }
