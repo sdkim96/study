@@ -10,6 +10,15 @@ int main(void)
     /* ptr = nums[0]; */ /* this is incompatible */
     ptr = &nums[0]; /* this is compatible */
 
+    char* endian_checker = (char*)ptr;
+    size_t i = 0;
+
+    for (; i<4; ++i) {
+        printf("%p\n", (void*)(endian_checker+i));
+    }
+
+    printf("%p\n", (void*)&endian_checker[2]);
+
     printf("%d\n", (int)sizeof(nums[2]));
 
     printf("%p\n", &nums[2]);

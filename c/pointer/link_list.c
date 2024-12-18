@@ -15,7 +15,7 @@ void pop(void);
 
 int main(void)
 {   
-    const struct node* start = push(1, NULL);
+    const struct node* start = push(1, (struct node*)NULL);
     const struct node* n1 = push(2, start);
     const struct node* n2 = push(3, n1);
     const struct node* end = push(4, n2);
@@ -26,7 +26,9 @@ int main(void)
 const struct node* push(const int data, const struct node* n_or_null)
 {
     static struct node* this_node;
-    if (n_or_null == NULL) 
+    this_node = (struct node*)malloc(sizeof(struct node));
+
+    if (n_or_null == (struct node*)NULL) 
     {   
         this_node->data = data;
         this_node->next_node_or_null = NULL;
