@@ -6,6 +6,7 @@ int get_ascii_number_of_string(const char* str);
 int compare_string(const char* str1, const char* str2);
 int string_case_insensitive_compare(const char* str1, const char* str2);
 char to_lower(const char str);
+void copy_string(const char* from, char* to);
 
 int main(void)
 {
@@ -16,22 +17,34 @@ int main(void)
     char* str1 = "String";
     char* str2 = "string";
     int compare;
+    
+    char* from = "hello";
+    char to[6];
+
+    copy_string(from, to);
+    size_t i;
+    
+    
+    for (i=0; to[i] != '\0'; ++i)
+    {
+        printf("%c\n", to[i]);
+    }
 
     compare = string_case_insensitive_compare(str1, str2);
     
-    // char* str3 = "안녕하세요?";
+    char* str3 = "안녕하세요?";
 
-    // int length;
-    // int sum;
+    int length;
+    int sum;
 
-    // length = get_length_of_string(str3);
-    // sum = get_ascii_number_of_string(str2);
-    // printf("%d\n", length);
-    // printf("%d\n", sum);
+    length = get_length_of_string(str3);
+    sum = get_ascii_number_of_string(str2);
+    printf("%d\n", length);
+    printf("%d\n", sum);
 
-    // int is_same;
-    // is_same = compare_string(str1, str2);
-    // printf("%d\n", is_same);
+    int is_same;
+    is_same = compare_string(str1, str2);
+    printf("%d\n", is_same);
 }
 
 int get_length_of_string(const char* str)
@@ -95,4 +108,14 @@ int string_case_insensitive_compare(const char* str1, const char* str2)
     }
 
     return to_lower(*str1) - to_lower(*str2);
+}
+
+void copy_string(const char* from, char* to)
+{
+    while(*from != '\0')
+    {
+        *to = *from;
+        ++from;
+        ++to;
+    }
 }
