@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/a/works/study/c/char",
-      "program": "/Users/a/works/study/c/char/build/Debug/outDebug"
+      "cwd": "/Users/a/works/study/c/input",
+      "program": "/Users/a/works/study/c/input/build/Debug/outDebug"
     }
   ]
 }
