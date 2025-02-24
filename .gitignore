@@ -2,3 +2,7 @@ c++/build
 
 .venv
 build
+
+*.dSYM/
+*.
+.txt
